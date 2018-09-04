@@ -20,14 +20,17 @@ return array(
 
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
-		/*
+		// esta es la herramienta generadora de codigo
+		//nos vamos a la ruta ejemplo localhost/yii_project/yiiapp/gii
+		//y metemos la clave que elegimos
+		//para crear un crud primero crear el modelo
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
-			'password'=>'Enter Your Password Here',
+			'password'=>'123',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
-		*/
+		
 	),
 
 	// application components
@@ -39,16 +42,22 @@ return array(
 		),
 
 		// uncomment the following to enable URLs in path-format
-		/*
+
+		// Descomentar esta parte,para evitar las url extrañas con numeros
+		// letras,etc
+		
 		'urlManager'=>array(
 			'urlFormat'=>'path',
+			'showScriptName'=>false,//agregamos esto por el htacces,para url limpia
+			//osea para quitar el index.php de la url			
+			// 'urlSuffix'=>'.html',//esto es para ponerle .html,.php, .jsp etc
 			'rules'=>array(
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
-		*/
+		
 
 		// database settings are configured in database.php
 		'db'=>require(dirname(__FILE__).'/database.php'),
