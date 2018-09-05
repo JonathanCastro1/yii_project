@@ -8,6 +8,8 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	// 'homeUrl'=>array('usuarios/index'), //con esto podemos cambiar la homeUrl
+	// aqui agregamos los temas
+	'theme'=>"castroTheme",
 	'name'=>'yii_project',
 
 	// preloading 'log' component

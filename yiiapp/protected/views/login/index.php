@@ -1,53 +1,54 @@
-<?php
-/* @var $this SiteController */
-/* @var $model LoginForm */
-/* @var $form CActiveForm  */
+<br>
+<br>
+<br>
 
-$this->pageTitle=Yii::app()->name . ' - Login';
-$this->breadcrumbs=array(
-	'Login',
-);
-?>
+<div class="login row page-header  col-md-6 col-lg-6 col-md-offset-3">
 
-<h1>Login</h1>
 
-<p>Please fill out the following form with your login credentials:</p>
+	<h2 class="fas fa-building">Login Beta 1.0</h2>
+</div>
 
-<div class="form">
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'login-form',
-	'enableClientValidation'=>true,
-	'clientOptions'=>array(
-		'validateOnSubmit'=>true,
-	),
-)); ?>
+<div class="row col-md-6 col-lg-6 col-md-offset-3 ">
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
-	<div class="row">
-		<!-- <?php //echo $form->labelEx($model,'username'); ?>
-		<?php //echo $form->textField($model,'username'); ?>
-		<?php //echo $form->error($model,'username'); ?> -->
-	</div>
+	<form action="" method="post">
+		<div class="form-group">
+			<label type="hidden" id="usuarioM"></label>
+			<input type="text" name="usuario" placeholder="Email or Username" class="form-control" id="usuario">
+		</div>	
+		
+		<div class="form-group">
+			<label type="hidden" id="contrasenaM"></label>
+			<input type="password" name="contrasena" placeholder="*******" class="form-control" id="contrasena">
+		</div>
 
-	<div class="row">
-		<!-- <?php //echo $form->labelEx($model,'password'); ?>
-		<?php //echo $form->passwordField($model,'password'); ?>
-		<?php //echo $form->error($model,'password'); ?> -->
-		<p class="hint">
-			Hint: You may login with <kbd>demo</kbd>/<kbd>demo</kbd> or <kbd>admin</kbd>/<kbd>admin</kbd>.
-		</p>
-	</div>
+		<div class="form-group" >		
+			<select name="role" class="form-control " id="role">
+				<option value="0">Select Role</option>					
+			</select>
+		</div>
 
-	<div class="row rememberMe">
-		<!-- <?php //echo $form->checkBox($model,'rememberMe'); ?>
-		<?php //echo $form->label($model,'rememberMe'); ?>
-		<?php //echo $form->error($model,'rememberMe'); ?> -->
-	</div>
+		<div class="form-group">
+			<button type="submit" name="submit" value="submit" class="btn-primary btn-sm glyphicon glyphicon-ok" >Login</button>
+			<button type="reset" class="btn-danger btn-sm glyphicon glyphicon-remove">Cancel</button>
+		</div>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Login'); ?>
-	</div>
+		<div class="form-group">
+			<a href="" >Logearse</a>
+			<!-- <a href="">Registro</a> -->
+			<?php echo CHtml::link("registrar",array("registrar"));?> 
+		</div>
 
-<?php $this->endWidget(); ?>
-</div><!-- form -->
+		<!-- <div class="form-group">
+			<a href="" >Register</a>
+		</div>	 -->		
+
+	</form>	
+
+
+<br>
+<br>
+<br>
+<br>
+
+</div>
