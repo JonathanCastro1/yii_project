@@ -27,9 +27,26 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
+	
+		$this->render('prueba');
+
+		
+	}
+
+	public function actionEntrar()
+	{
+	// ahy un peo con logearse y la ruta de index por defecto 
+	// solo funciona al redigirar en el menu
+
+		// guardo los datos del modelo en la variable
+		$model=new LoginForm;
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+
+		// le paso la variable model a la vista
+		$this->render('login',array('model'=>$model));
+
+		// $this->render('index');
 	}
 
 	/**
@@ -92,7 +109,10 @@ class SiteController extends Controller
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login())
-				$this->redirect(Yii::app()->user->returnUrl);
+				// $this->redirect(Yii::app()->user->returnUrl);
+				// $this->redirect('usuarios');
+			$this->redirect(array('/usuarios/index'));
+			// $this->redirect(array('/Prueba'));
 		}
 		// display the login form
 		$this->render('login',array('model'=>$model));
@@ -106,4 +126,19 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+
+	// ahy que ponerle action a todos los metodos
+	 // public function actionPrueba() {
+  //      echo 'Hola Mundo';
+  //  }
+
+// ok por alguna razon si creas una archivo de vista
+// y lo llamas en una url como en un menu
+// y no creas un render te sale un error
+   	public function actionPruebados()
+	{	
+		$this->render('pruebados');
+		
+	}
+
 }
